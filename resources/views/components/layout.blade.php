@@ -9,12 +9,11 @@
     @vite (["resources/css/app.css","resources/js/app.js"])
 </head>
 <body class="min-h-screen">
-<header class=" fixed bg-blue-950 text-white w-100% h-20 mx-auto flex items-center justify-between px-6 py-4">
+<header class=" fixed w-full top-0 bg-blue-950 text-white w-auto h-20 mx-auto flex items-center justify-between px-6 py-4">
         <h1 class="text-xl font-bold">
             LOGOTIPO
         </h1>
         <nav class="flex gap-6">
-            <a href="#" class="hover:text-gray-200 transition">Noticias</a>
             <a href="#" class="hover:text-gray-200 transition">Proyectos</a>
             <a href="#" class="hover:text-gray-200 transition">Register</a>
             <a href="#" class="hover:text-gray-200 transition">Login</a>
