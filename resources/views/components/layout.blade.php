@@ -15,8 +15,8 @@
         </h1>
         <nav class="flex gap-6">
             <a href="#" class="hover:text-gray-200 transition">Proyectos</a>
-            <a href="#" class="hover:text-gray-200 transition">Register</a>
-            <a href="#" class="hover:text-gray-200 transition">Login</a>
+            <a href="{{ route('register') }}" class="hover:text-gray-200 transition">Register</a>
+            <a href="{{ route('login') }}" class="hover:text-gray-200 transition">Login</a>
         </nav>
 </header>
         {{ $slot }}
