@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
 Route::view("main", "main")->name("main");
 Route::view("login", "login")->name("login");
 Route::view("register", "register")->name("register");
+Route::view("projects", "projects")->name("projects");
 
 
 require __DIR__.'/auth.php';

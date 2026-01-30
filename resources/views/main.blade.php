@@ -48,6 +48,8 @@
                 <h3 class="text-xl mt-12 text-center">
                     Gestiona tus proyectos personales 🙌
                 </h3>
+                <a href="{{ route('projects') }}" class="p-3 bg-blue-950 rounded-3xl mt-8">Empieza ya!</a>
+
             </div>
     @endauth
 </x-layout>
