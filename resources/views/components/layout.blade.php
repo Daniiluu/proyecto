@@ -13,11 +13,26 @@
         <h1 class="text-xl font-bold">
             LOGOTIPO
         </h1>
+    @guest
         <nav class="flex gap-6">
-            <a href="#" class="hover:text-gray-200 transition">Proyectos</a>
             <a href="{{ route('register') }}" class="hover:text-gray-200 transition">Register</a>
             <a href="{{ route('login') }}" class="hover:text-gray-200 transition">Login</a>
         </nav>
+    @endguest
+    @auth
+        <nav class="flex">
+            <a href=""class="hover:text-gray-200 transitio mr-8 hover:underline">Proyectos</a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <button type="submit" class="text-white hover:underline mr-8">
+                    Logout
+                </button>
+            </form>
+            <a href="" class="hover:text-gray-200 transition hover:underline">{{auth()->user()->name}}</a>
+        </nav>
+
+    @endauth
 </header>
         {{ $slot }}
 <footer class="bottom-0 bg-slate-900 text-slate-400">

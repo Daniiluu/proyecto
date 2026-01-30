@@ -1,4 +1,5 @@
 <x-layout>
+    @guest
     <div
         class="h-screen text-white flex flex-col items-center justify-start"
         style="background-image: url(https://images.unsplash.com/photo-1679212839469-fb16a48919ce?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-size: cover; background-position: center;"
@@ -34,5 +35,19 @@
 
         </section>
     </div>
+    @endguest
+    @auth
+            <div
+                class="h-screen text-white flex flex-col items-center justify-start"
+                style="background-image: url(https://images.unsplash.com/photo-1679212839469-fb16a48919ce?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); background-size: cover; background-position: center;"
+            >
+                <h1 class="text-6xl font-bold pt-50 text-center">
+                    Bienvenido de nuevo,  {{auth()->user()->name}} 👋
 
+                </h1>
+                <h3 class="text-xl mt-12 text-center">
+                    Gestiona tus proyectos personales 🙌
+                </h3>
+            </div>
+    @endauth
 </x-layout>
