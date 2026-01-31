@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,7 +21,8 @@ Route::middleware('auth')->group(function () {
 Route::view("main", "main")->name("main");
 Route::view("login", "login")->name("login");
 Route::view("register", "register")->name("register");
-Route::view("projects", "projects")->name("projects");
+Route::resource('projects', ProjectController::class)
+    ->middleware('auth');
 
 
 require __DIR__.'/auth.php';

@@ -21,7 +21,7 @@
     @endguest
     @auth
         <nav class="flex">
-            <a href="{{ route('projects') }}"class="hover:text-gray-200 transitio mr-8 hover:underline">Proyectos</a>
+            <a href="{{ route('projects.index') }}"class="hover:text-gray-200 transitio mr-8 hover:underline">Proyectos</a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
