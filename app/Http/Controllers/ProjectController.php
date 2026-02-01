@@ -47,29 +47,23 @@ class ProjectController extends Controller
     }
     public function update(Request $request, Project $project)
     {
-        // Solo permite que el dueño del proyecto lo edite
         if ($project->user_id !== auth()->id()) {
             abort(403);
         }
-
-        // Validación
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
         ]);
 
-        // Actualizar proyecto
         $project->update([
             'name' => $request->name,
             'description' => $request->description,
         ]);
 
-        // Redirigir con mensaje
         return redirect()->route('projects.index')->with('success', 'Proyecto actualizado correctamente');
     }
     public function destroy(Project $project)
     {
-        // Solo el dueño puede eliminar
         if ($project->user_id !== auth()->id()) {
             abort(403);
         }

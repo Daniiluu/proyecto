@@ -4,8 +4,6 @@
         <h1 class="text-3xl font-bold mb-8 text-center">
             Mis proyectos
         </h1>
-
-        {{-- Si no hay proyectos --}}
         @if ($projects->isEmpty())
             <div class="bg-gray-100 p-8 rounded-xl text-center">
                 <p class="text-gray-600 mb-6">
@@ -18,14 +16,12 @@
             </div>
 
         @else
-            {{-- Botón crear nuevo proyecto --}}
             <div class="mb-6 text-right">
                 <a href="{{ route('projects.create') }}" class="btn btn-primary bg-blue-950 text-white p-3 rounded-2xl">
                     Crear nuevo proyecto
                 </a>
             </div>
 
-            {{-- Lista de proyectos --}}
             <div class="space-y-4">
                 @foreach ($projects as $project)
                     <div class="bg-white p-6 rounded-xl shadow flex justify-between items-start">
@@ -36,15 +32,11 @@
                             <p class="text-gray-600 mt-2">{{ $project->description }}</p>
                         </div>
 
-                        {{-- Acciones --}}
                         <div class="flex gap-3">
 
-                            {{-- Editar --}}
                             <a href="{{ route('projects.edit', $project) }}" class="btn btn-sm btn-outline bg-blue-950 text-white rounded-2xl w-16 p-3">
                                 Editar
                             </a>
-
-                            {{-- Eliminar --}}
                             <form
                                 method="POST"
                                 action="{{ route('projects.destroy', $project) }}"
